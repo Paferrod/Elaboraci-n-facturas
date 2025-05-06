@@ -10,10 +10,12 @@
 
   <div class="contenedor">
     <h1>🧾 Generador de Facturas</h1>
+
+    <!-- Sección de información de la factura (rellenada al guardar cliente) -->
     <div id="info-factura"></div>
 
-
-    <form id="formulario-producto">
+    <!-- Formulario para los datos del cliente -->
+    <form id="formulario-cliente">
       <div class="cabecera-factura">
         <div class="fila">
           <input type="text" id="cliente" placeholder="Nombre del cliente" required />
@@ -23,9 +25,12 @@
           <input type="text" id="numero-factura" placeholder="N.º Factura" required />
           <input type="date" id="fecha" required />
         </div>
+        <button type="submit">Guardar cliente</button>
       </div>
-      
-      
+    </form>
+
+    <!-- Formulario para añadir productos -->
+    <form id="formulario-producto">
       <div class="linea-producto">
         <input type="text" id="producto" placeholder="Nombre del producto" required />
         <input type="number" id="cantidad" placeholder="Cantidad" required min="1" />
@@ -39,6 +44,7 @@
       </div>
     </form>
 
+    <!-- Tabla con los productos añadidos -->
     <table>
       <thead>
         <tr>
@@ -53,6 +59,7 @@
       <tbody id="tabla-productos"></tbody>
     </table>
 
+    <!-- Totales finales -->
     <div class="total" id="total-final">
       <p>Subtotal: 0.00 €</p>
       <p>IVA total: 0.00 €</p>
