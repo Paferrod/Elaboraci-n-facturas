@@ -8,14 +8,13 @@
 </head>
 <body>
 
-  <div class="contenedor">
+  <div class="contenedor" id="factura">
     <h1>🧾 Generador de Facturas</h1>
 
-    <!-- Sección de información de la factura (rellenada al guardar cliente) -->
     <div id="info-factura"></div>
 
-    <!-- Formulario para los datos del cliente -->
-    <form id="formulario-cliente">
+    <!-- Formulario de cliente -->
+    <form id="formulario-cliente" class="solo-web">
       <div class="cabecera-factura">
         <div class="fila">
           <input type="text" id="cliente" placeholder="Nombre del cliente" required />
@@ -29,8 +28,8 @@
       </div>
     </form>
 
-    <!-- Formulario para añadir productos -->
-    <form id="formulario-producto">
+    <!-- Formulario de productos -->
+    <form id="formulario-producto" class="solo-web">
       <div class="linea-producto">
         <input type="text" id="producto" placeholder="Nombre del producto" required />
         <input type="number" id="cantidad" placeholder="Cantidad" required min="1" />
@@ -40,11 +39,11 @@
           <option value="0.10">10%</option>
           <option value="0.04">4%</option>
         </select>
-        <button type="submit">Añadir</button>
+        <button type="submit" class="solo-web">Añadir</button>
       </div>
     </form>
 
-    <!-- Tabla con los productos añadidos -->
+    <!-- Tabla de productos -->
     <table>
       <thead>
         <tr>
@@ -59,14 +58,18 @@
       <tbody id="tabla-productos"></tbody>
     </table>
 
-    <!-- Totales finales -->
+    <!-- Totales -->
     <div class="total" id="total-final">
       <p>Subtotal: 0.00 €</p>
       <p>IVA total: 0.00 €</p>
       <strong>Total: 0.00 €</strong>
     </div>
+
+    <!-- Botón para descargar PDF -->
+    <button id="descargar-pdf" class="solo-web">Descargar factura en PDF</button>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
